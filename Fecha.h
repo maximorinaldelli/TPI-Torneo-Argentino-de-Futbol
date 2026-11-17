@@ -16,6 +16,6 @@ public:
 
     int getDia();
     int getMes();
-    int getAnnio();
+    int getAnio();
 
 };
