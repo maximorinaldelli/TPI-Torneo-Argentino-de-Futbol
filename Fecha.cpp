@@ -35,7 +35,7 @@ int Fecha::getMes()
     return _mes;
 }
 
-int Fecha::getAnnio()
+int Fecha::getAnio()
 {
     return _anio;
 }
