@@ -19,7 +19,7 @@ void Gol::setIdPartido(int idp)
 }
 void Gol::setMinuto(int minu)
 {
-    _minuto == minu;
+    _minuto = minu;
 }
 int Gol::getIdJugador()
 {
