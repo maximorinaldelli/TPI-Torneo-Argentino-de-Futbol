@@ -9,10 +9,11 @@
 
 1793740670 c:\dev\proyecto final\proyectofinal\club.h
 
-1790808792 source:c:\dev\proyecto final\proyectofinal\fecha.cpp
+1794958114 source:c:\dev\proyecto final\proyectofinal\fecha.cpp
+	<iostream>
 	"Fecha.h"
 
-1790808792 c:\dev\proyecto final\proyectofinal\fecha.h
+1794958114 c:\dev\proyecto final\proyectofinal\fecha.h
 
 1793741603 source:c:\dev\proyecto final\proyectofinal\jugador.cpp
 	<iostream>
@@ -65,4 +66,14 @@
 	<cstdio>
 	<iostream>
 	"Jugador.h"
+
+1794957709 source:c:\dev\proyecto final\proyectofinal\archivopartidos.cpp
+	<cstring>
+	<iostream>
+	"ArchivoPartidosh.h"
+
+1794957718 c:\dev\proyecto final\proyectofinal\archivopartidosh.h
+	<cstring>
+	<iostream>
+	"Partido.h"
 

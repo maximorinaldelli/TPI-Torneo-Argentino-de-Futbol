@@ -73,7 +73,7 @@ int ArchivoPartidos::contarRegistros()
     FILE *pFile = fopen(_nombreArchivo,"rb");
     if(pFile==nullptr)return 0;
 
-    fseek(pFile,sizeof(Partido),SEEK_END);
+    fseek(pFile,0,SEEK_END);
 
     int cant = ftell(pFile) / sizeof(Partido);
 
