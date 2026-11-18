@@ -7,7 +7,7 @@ Gol::Gol(int idj, int idp,int minu)
 {
     _idJugador = idj;
     _idPartido = idp;
-    _minuto == minu;
+    _minuto = minu;
 }
 void Gol::setIdJugador(int idj)
 {
