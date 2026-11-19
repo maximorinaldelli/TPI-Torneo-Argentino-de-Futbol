@@ -100,3 +100,18 @@ int ArchivoJugadores::buscarPorId(int id)
     return -1;
 }
 
+bool ArchivoJugadores::bajaLogica(int id)
+{
+    int pos = buscarPorId(id);
+
+    if(pos == -1)
+    {
+        return false;
+    }
+
+    Jugador reg = leerRegistro(pos);
+
+    reg.setEstado(false);
+
+    return modificaRegistro(reg, pos);
+}

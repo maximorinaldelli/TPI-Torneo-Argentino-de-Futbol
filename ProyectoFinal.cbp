@@ -50,6 +50,8 @@
 		<Unit filename="Gol.h" />
 		<Unit filename="Jugador.cpp" />
 		<Unit filename="Jugador.h" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
 		<Unit filename="Partido.cpp" />
 		<Unit filename="Partido.h" />
 		<Unit filename="main.cpp" />

@@ -15,12 +15,12 @@
 
 1794958114 c:\dev\proyecto final\proyectofinal\fecha.h
 
-1793741603 source:c:\dev\proyecto final\proyectofinal\jugador.cpp
+1795044200 source:c:\dev\proyecto final\proyectofinal\jugador.cpp
 	<iostream>
 	<cstring>
 	"Jugador.h"
 
-1793741652 c:\dev\proyecto final\proyectofinal\jugador.h
+1795044200 c:\dev\proyecto final\proyectofinal\jugador.h
 	"Fecha.h"
 
 1793742330 source:c:\dev\proyecto final\proyectofinal\contrato.cpp
@@ -56,18 +56,18 @@
 
 1794574644 c:\dev\proyecto final\proyectofinal\cancha.h
 
-1794868990 source:c:\dev\proyecto final\proyectofinal\archivojugadores.cpp
+1795044360 source:c:\dev\proyecto final\proyectofinal\archivojugadores.cpp
 	<cstring>
 	<iostream>
 	"Jugador.h"
 	"ArchivoJugadores.h"
 
-1794957708 c:\dev\proyecto final\proyectofinal\archivojugadores.h
+1795044360 c:\dev\proyecto final\proyectofinal\archivojugadores.h
 	<cstdio>
 	<iostream>
 	"Jugador.h"
 
-1794957709 source:c:\dev\proyecto final\proyectofinal\archivopartidos.cpp
+1794971389 source:c:\dev\proyecto final\proyectofinal\archivopartidos.cpp
 	<cstring>
 	<iostream>
 	"ArchivoPartidosh.h"
@@ -76,4 +76,15 @@
 	<cstring>
 	<iostream>
 	"Partido.h"
+
+1794971389 source:c:\dev\proyecto final\proyectofinal\archivoclubes.cpp
+	<iostream>
+	<cstring>
+	"ArchivoClubes.h"
+	"Club.h"
+
+1794971021 c:\dev\proyecto final\proyectofinal\archivoclubes.h
+	<iostream>
+	<cstring>
+	"Club.h"
 

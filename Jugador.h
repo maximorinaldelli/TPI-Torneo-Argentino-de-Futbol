@@ -18,7 +18,8 @@ public:
     Jugador(int idj=-1,int idc=-1,int idcon=-1,int dors=-1,const char* nom="n",const char* apellido="n",const char* pos="n",bool est=true);
 
     void mostrar();
-    void cargar();
+    void cargar(bool mod);
+
 
     void setIdJugador(int idj);
     void setIdClub(int idc);

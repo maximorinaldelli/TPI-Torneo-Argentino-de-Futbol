@@ -25,16 +25,17 @@ void Jugador::mostrar()
     cout <<"Dorsal: "<<_dorsal  <<endl;
 }
 
-void Jugador::cargar()
+void Jugador::cargar(bool mod)
 {
+    if(!mod){
+    cout <<"ID Jugador: "  <<endl;
+    cin>>_idJugador;
+
     cout<<"Nombre: "  <<endl;
     cin>>_nombre;
 
     cout <<"Apellido: "<<endl;
     cin>>_apellido;
-
-    cout <<"ID Jugador: "  <<endl;
-    cin>>_idJugador;
 
     cout <<"ID del Club: " <<endl;
     cin>>_idClub;
@@ -42,6 +43,20 @@ void Jugador::cargar()
     cout <<"Dorsal: "  <<endl;
     cin>>_dorsal;
 
+    }else{
+
+    cout<<"Nombre: "  <<endl;
+    cin>>_nombre;
+
+    cout <<"Apellido: "<<endl;
+    cin>>_apellido;
+
+    cout <<"ID del Club: " <<endl;
+    cin>>_idClub;
+
+    cout <<"Dorsal: "  <<endl;
+    cin>>_dorsal;
+    }
 }
 
 
