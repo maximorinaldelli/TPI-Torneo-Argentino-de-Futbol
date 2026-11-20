@@ -97,7 +97,7 @@ case 1:{
     system("cls");
     if(archireg.guardarRegistro(reg))
     {
-        cout<< "JUGADOR JUARDADO CORRECTAMENTE."<<endl;
+        cout<< "JUGADOR GUARDADO CORRECTAMENTE."<<endl;
     }else{
     cout<< "ERROR AL CARGAR JUGADOR."<<endl;
     }
