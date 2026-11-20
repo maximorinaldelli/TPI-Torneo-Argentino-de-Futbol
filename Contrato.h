@@ -16,7 +16,7 @@ private:
 
 public:
     Contrato(int id=-1,Fecha fi=Fecha(), Fecha ff=Fecha(), float monto=-1,const char* obj="n",bool est=true);
-    void cargar();
+    void cargar(bool mod);
     void mostrar();
 
     void setSalarioMensual(float sal);

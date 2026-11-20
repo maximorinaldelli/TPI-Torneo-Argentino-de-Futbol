@@ -16,22 +16,51 @@ Club::Club(int id,const char* nom,const char* dt,const char* pres,int canttit,bo
 
 void Club::mostrar()
 {
-    cout<<"Nombre del Club: "<<_nombre<<endl;
+    cout<<"***************************************"<<endl;
     cout<<"ID: "<<_idClub<<endl;
+    cout<<"Nombre del Club: "<<_nombre<<endl;
     cout<<"Presidente: "<<_presidente<<endl;
+    cout<<"Director tecnico: "<<_dt<<endl;
     cout<<"Cantidad de titulos: "<<_cantTitulos<<endl;
+    cout<<"***************************************"<<endl;
+
 }
 
-void Club::cargar()
+void Club::cargar(bool mod)
 {
+   if(!mod){
     cout<<"Nombre del Club: "<<endl;
-    cin>>_nombre;
+    cin.ignore();
+    cin.getline(_nombre,50);
+
     cout<<"ID: "<<endl;
     cin>>_idClub;
+    cin.ignore();
+
     cout<<"Presidente: "<<endl;
-    cin>>_presidente;
+    cin.getline(_presidente,40);
+
+    cout<<"Director tecnico actual"<<endl;
+    cin.getline(_dt,40);
     cout<<"Cantidad de titulos: "<<endl;
     cin>>_cantTitulos;
+    }else{
+
+    cin.ignore();
+    cout<<"Nombre del Club: "<<endl;
+    cin.getline(_nombre,50);
+    cin.ignore();
+
+    cout<<"Presidente: "<<endl;
+    cin.getline(_presidente,40);
+
+    cout<<"Director tecnico actual"<<endl;
+    cin.getline(_dt,40);
+
+    cout<<"Cantidad de titulos: "<<endl;
+    cin>>_cantTitulos;
+    }
+
 }
 
 void Club::setIDClub(int idc)

@@ -12,6 +12,7 @@ public:
     Fecha(int d=0, int m=0, int a=0);
 
     void mostrar();
+    void cargar();
 
     void setDia(int dia);
     void setMes(int mes);

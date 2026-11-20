@@ -32,8 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ArchivoCancha.cpp" />
+		<Unit filename="ArchivoCancha.h" />
 		<Unit filename="ArchivoClubes.cpp" />
 		<Unit filename="ArchivoClubes.h" />
+		<Unit filename="ArchivoContratos.cpp" />
+		<Unit filename="ArchivoContratos.h" />
+		<Unit filename="ArchivoGoles.cpp" />
+		<Unit filename="ArchivoGoles.h" />
 		<Unit filename="ArchivoJugadores.cpp" />
 		<Unit filename="ArchivoJugadores.h" />
 		<Unit filename="ArchivoPartidos.cpp" />

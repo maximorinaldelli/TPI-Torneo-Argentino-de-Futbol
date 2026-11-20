@@ -1,21 +1,22 @@
 # depslib dependency file v1.0
-1584205420 source:c:\dev\proyecto final\proyectofinal\main.cpp
+1795057956 source:c:\dev\proyecto final\proyectofinal\main.cpp
 	<iostream>
+	"Menu.h"
 
-1793740800 source:c:\dev\proyecto final\proyectofinal\club.cpp
+1795188111 source:c:\dev\proyecto final\proyectofinal\club.cpp
 	<iostream>
 	<cstring>
 	"Club.h"
 
-1793740670 c:\dev\proyecto final\proyectofinal\club.h
+1795055544 c:\dev\proyecto final\proyectofinal\club.h
 
-1794958114 source:c:\dev\proyecto final\proyectofinal\fecha.cpp
+1795205424 source:c:\dev\proyecto final\proyectofinal\fecha.cpp
 	<iostream>
 	"Fecha.h"
 
-1794958114 c:\dev\proyecto final\proyectofinal\fecha.h
+1795205306 c:\dev\proyecto final\proyectofinal\fecha.h
 
-1795044200 source:c:\dev\proyecto final\proyectofinal\jugador.cpp
+1795188111 source:c:\dev\proyecto final\proyectofinal\jugador.cpp
 	<iostream>
 	<cstring>
 	"Jugador.h"
@@ -23,21 +24,21 @@
 1795044200 c:\dev\proyecto final\proyectofinal\jugador.h
 	"Fecha.h"
 
-1793742330 source:c:\dev\proyecto final\proyectofinal\contrato.cpp
+1795208384 source:c:\dev\proyecto final\proyectofinal\contrato.cpp
 	<iostream>
 	<cstring>
 	"Contrato.h"
 	"Fecha.h"
 
-1793742330 c:\dev\proyecto final\proyectofinal\contrato.h
+1795208384 c:\dev\proyecto final\proyectofinal\contrato.h
 	"Fecha.h"
 
-1792105249 source:c:\dev\proyecto final\proyectofinal\gol.cpp
+1795046212 source:c:\dev\proyecto final\proyectofinal\gol.cpp
 	<iostream>
 	<cstring>
 	"Gol.h"
 
-1791762866 c:\dev\proyecto final\proyectofinal\gol.h
+1795210705 c:\dev\proyecto final\proyectofinal\gol.h
 	<iostream>
 
 1794483629 source:c:\dev\proyecto final\proyectofinal\partido.cpp
@@ -77,14 +78,61 @@
 	<iostream>
 	"Partido.h"
 
-1794971389 source:c:\dev\proyecto final\proyectofinal\archivoclubes.cpp
+1795057605 source:c:\dev\proyecto final\proyectofinal\archivoclubes.cpp
 	<iostream>
 	<cstring>
 	"ArchivoClubes.h"
 	"Club.h"
 
-1794971021 c:\dev\proyecto final\proyectofinal\archivoclubes.h
+1795057605 c:\dev\proyecto final\proyectofinal\archivoclubes.h
 	<iostream>
 	<cstring>
 	"Club.h"
+
+1795210328 source:c:\dev\proyecto final\proyectofinal\menu.cpp
+	<iostream>
+	<cstring>
+	"Menu.h"
+	"Jugador.h"
+	"Club.h"
+	"Partido.h"
+	"Cancha.h"
+	"Gol.h"
+	"Contrato.h"
+	"ArchivoJugadores.h"
+	"ArchivoClubes.h"
+	"ArchivoPartidosh.h"
+	"ArchivoContratos.h"
+
+1795041459 c:\dev\proyecto final\proyectofinal\menu.h
+
+1795046212 source:c:\dev\proyecto final\proyectofinal\archivocancha.cpp
+	<cstring>
+	<iostream>
+	"ArchivoCancha.h"
+
+1795046212 c:\dev\proyecto final\proyectofinal\archivocancha.h
+	<cstring>
+	<iostream>
+	"Cancha.h"
+
+1795210047 source:c:\dev\proyecto final\proyectofinal\archivocontratos.cpp
+	<cstring>
+	<iostream>
+	"ArchivoContratos.h"
+
+1795210039 c:\dev\proyecto final\proyectofinal\archivocontratos.h
+	<cstring>
+	<iostream>
+	"Contrato.h"
+
+1795053764 source:c:\dev\proyecto final\proyectofinal\archivogoles.cpp
+	<cstring>
+	<iostream>
+	"ArchivoGoles.h"
+
+1795210705 c:\dev\proyecto final\proyectofinal\archivogoles.h
+	<cstring>
+	<iostream>
+	"Gol.h"
 

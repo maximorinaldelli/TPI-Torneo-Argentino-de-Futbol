@@ -27,35 +27,39 @@ void Jugador::mostrar()
 
 void Jugador::cargar(bool mod)
 {
-    if(!mod){
-    cout <<"ID Jugador: "  <<endl;
-    cin>>_idJugador;
+    if (!mod)
+    {
+        cout << "ID Jugador: " << endl;
+        cin >> _idJugador;
+        cin.ignore();
 
-    cout<<"Nombre: "  <<endl;
-    cin>>_nombre;
+        cout << "Nombre: " << endl;
+        cin.getline(_nombre, 30);
 
-    cout <<"Apellido: "<<endl;
-    cin>>_apellido;
+        cout << "Apellido: " << endl;
+        cin.getline(_apellido, 30);
 
-    cout <<"ID del Club: " <<endl;
-    cin>>_idClub;
+        cout << "ID del Club: " << endl;
+        cin >> _idClub;
 
-    cout <<"Dorsal: "  <<endl;
-    cin>>_dorsal;
+        cout << "Dorsal: " << endl;
+        cin >> _dorsal;
+    }
+    else
+    {
+        cin.ignore();
 
-    }else{
+        cout << "Nombre: " << endl;
+        cin.getline(_nombre, 30);
 
-    cout<<"Nombre: "  <<endl;
-    cin>>_nombre;
+        cout << "Apellido: " << endl;
+        cin.getline(_apellido, 30);
 
-    cout <<"Apellido: "<<endl;
-    cin>>_apellido;
+        cout << "ID del Club: " << endl;
+        cin >> _idClub;
 
-    cout <<"ID del Club: " <<endl;
-    cin>>_idClub;
-
-    cout <<"Dorsal: "  <<endl;
-    cin>>_dorsal;
+        cout << "Dorsal: " << endl;
+        cin >> _dorsal;
     }
 }
 

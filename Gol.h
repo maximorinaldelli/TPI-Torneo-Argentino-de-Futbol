@@ -10,6 +10,7 @@ private:
     int _idJugador;
     int _idPartido;
     int _minuto;
+
 public:
     Gol(int idj=-1, int idp=-1,int minu=-1);
     void setIdJugador(int idj);

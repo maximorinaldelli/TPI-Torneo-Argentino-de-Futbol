@@ -98,5 +98,17 @@ int ArchivoClubes::contarRegistro()
     return cant;
 }
 
+bool ArchivoClubes::bajaLogica(int id)
+{
+    int pos = buscarXId(id);
 
+    if(pos==-1)
+    {
+        return false;
+    }
+
+    Club reg = leerRegistro(pos);
+    reg.setEstado(false);
+    return modificarRegistro(reg,pos);
+}
 

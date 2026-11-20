@@ -14,7 +14,7 @@ public:
     Club(int id=-1,const char* nom="n",const char* dt="null",const char* pres="null",int canttit=-1,bool est=true);
 
     void mostrar();
-    void cargar();
+    void cargar(bool mod);
 
     void setIDClub(int idclub);
     void setNombre(const char* nom);

@@ -2,6 +2,11 @@
 #include <iostream>
 #include "ArchivoContratos.h"
 
+ArchivoContratos::ArchivoContratos(const char *nom)
+{
+    strcpy(_nombreArchivo,nom);
+}
+
 bool ArchivoContratos::guardarRegistro(Contrato reg)
 {
     FILE *pFile = fopen(_nombreArchivo,"ab");
@@ -80,4 +85,19 @@ int ArchivoContratos::contarRegistros()
     fclose(pFile);
     return cant;
 
+}
+
+bool ArchivoContratos::bajaLogica(int id)
+{
+    int pos = buscarPorId(id);
+
+    if(pos==-1)
+    {
+        return false;
+    }
+
+    Contrato reg;
+    reg = leerRegistro(pos);
+    reg.setEstado(false);
+    return modificarRegistro(reg,pos);
 }

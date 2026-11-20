@@ -7,7 +7,12 @@
 class ArchivoGoles
 {
 private:
-    int IdJugador;
+    int _IdJugador;
+    int _IdPartido;
+    int _minuto;
+    int _segundo;
+    char _nombreArchivo[20];
+
 public:
     ArchivoGoles(const char* nom="Goles.dat");
 

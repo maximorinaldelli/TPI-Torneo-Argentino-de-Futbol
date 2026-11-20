@@ -9,6 +9,17 @@ Fecha::Fecha(int d, int m, int a)
     setAnio(a);
 }
 
+void Fecha::cargar()
+{
+    std::cout<<"Dia: "<<std::endl;
+    std::cin>>_dia;
+    std::cout<<"Mes: "<<std::endl;
+    std::cin>>_mes;
+    std::cout<<"Anio: "<<std::endl;
+    std::cin>>_anio;
+
+}
+
 void Fecha::mostrar()
 {
     std::cout << _dia << "/"

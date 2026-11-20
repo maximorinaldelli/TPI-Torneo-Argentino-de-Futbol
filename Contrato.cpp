@@ -20,16 +20,57 @@ Contrato::Contrato(int id,Fecha fi,Fecha ff,float monto,const char* obj,bool est
     _fechaFin = ff;
 }
 
-void Contrato::cargar()
+void Contrato::cargar(bool mod)
 {
+
+    if(!mod){
+    cout<< "********************************************"<<endl;
+    cout<< "ID del contrato: "<<endl;
+    cin>>_idContrato;
+    cout<<" ID del Jugador: "<<endl;
+    cin>>_idJugador;
+    cout<< "ID del Club: "<<endl;
+    cin>>_idClub;
+    cout<< "Fecha de inicio: " <<endl;
+    _fechaInicio.cargar();
+    cout<< "Fecha de fin: "<<endl;
+    _fechaFin.cargar();
+    cout<< "Salario mensual: "<<endl;
+    cin>>_salarioMensual;
+    cout<< "Objetivos: "<<endl;
+    cin>>_objetivos;
+    cout<< "********************************************"<<endl;
+    }else{
+    cout<< "********************************************"<<endl;
+    cout<<" ID del Jugador: "<<endl;
+    cin>>_idJugador;
+    cout<< "ID del Club: "<<endl;
+    cin>>_idClub;
+    cout<< "Fecha de inicio: " <<endl;
+    _fechaInicio.cargar();
+    cout<< "Fecha de fin: "<<endl;
+    _fechaFin.cargar();
+    cout<< "Salario mensual: "<<endl;
+    cin>>_salarioMensual;
+    cout<< "Objetivos: "<<endl;
+    cin>>_objetivos;
+    cout<< "********************************************"<<endl;
+    }
 
 }
 void Contrato::mostrar()
 {
-    cout << "ID del contrato: "<<_idContrato<<endl;
-    cout<<"ID del Jugador: "<<_idJugador<<endl;
-    cout<< "ID del Club nuevo: "<<_idClub<<endl;
-
+    cout<< "********************************************"<<endl;
+    cout<< "ID del contrato: "<<_idContrato<<endl;
+    cout<<" ID del Jugador: "<<_idJugador<<endl;
+    cout<< "ID del Club: "<<_idClub<<endl;
+    cout<< "Fecha de inicio: " <<endl;
+    _fechaInicio.mostrar();
+    cout<< "Fecha de fin: "<<endl;
+    _fechaFin.mostrar();
+    cout<< "Salario mensual: "<<_salarioMensual<<"$"<<endl;
+    cout<< "Objetivos: "<<_objetivos<<endl;
+    cout<< "********************************************"<<endl;
 
 }
 

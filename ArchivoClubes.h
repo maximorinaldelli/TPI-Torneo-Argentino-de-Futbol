@@ -16,6 +16,8 @@ public:
     Club leerRegistro(int pos);
     int buscarXId(int id);
     int contarRegistro();
+    bool bajaLogica(int id);
+
 
 };
 

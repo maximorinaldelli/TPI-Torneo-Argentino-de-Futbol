@@ -29,7 +29,7 @@ bool ArchivoGoles::modificarRegistro(Gol reg, int pos)
     return res;
 
 }
-Gol ArchivoGoles::leerRegistro(int id)
+Gol ArchivoGoles::leerRegistro(int pos)
 {
     FILE *pFile = fopen(_nombreArchivo,"rb");
     Gol reg;
