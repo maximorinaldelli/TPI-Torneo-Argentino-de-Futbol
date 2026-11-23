@@ -12,6 +12,9 @@ private:
     bool _estado;
 
 public:
+    void cargar(bool mod);
+    void mostrar();
+
     void setIdCancha(int id);
     void setIdClub(int idc);
     void setCapacidad(int cap);
