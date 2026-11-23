@@ -2,6 +2,11 @@
 #include <iostream>
 #include "ArchivoCancha.h"
 
+ArchivoCancha::ArchivoCancha(const char *nom)
+{
+    strcpy(_nombreArchivo,nom);
+}
+
 bool ArchivoCancha::guardarRegistro(Cancha reg)
 {
     FILE *pFile = fopen(_nombreArchivo,"ab");
@@ -80,4 +85,19 @@ int ArchivoCancha::contarRegistros()
     fclose(pFile);
     return cant;
 
+}
+
+bool ArchivoCancha::bajaLogica(int id)
+{
+    int pos = buscarPorId(id);
+
+    if(pos==-1)
+    {
+        return false;
+    }
+
+    Cancha reg;
+    reg = leerRegistro(pos);
+    reg.setEstado(false);
+    return modificarRegistro(reg,pos);
 }
