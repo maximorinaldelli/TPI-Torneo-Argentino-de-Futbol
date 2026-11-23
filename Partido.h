@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include "Gol.h"
+
 
 class Partido
 {
@@ -9,21 +9,27 @@ private:
     int _idPartido;
     int _idLocal;
     int _idVisitante;
-    Gol _cantGolesLocal;
-    Gol _cantGolesVisitante;
+    int _cantGolesLocal;
+    int _cantGolesVisitante;
+    bool _estado;
 
 public:
+    void cargar(bool mod);
+    void mostrar();
+
     void setIdPartido(int id);
     void setIdLocal(int idl);
     void setIdVisitante(int );
-    void setCantGolLocal(Gol cant);
-    void setCantGolVisita(Gol cant);
+    void setCantGolLocal(int cant);
+    void setCantGolVisita(int cant);
+    void setEstado(bool est);
 
     int getIdPartido();
     int getIdLocal();
     int getIdVisitante();
-    Gol getCantGolesLocal();
-    Gol getCantGolesVisita();
+    int getCantGolesLocal();
+    int getCantGolesVisita();
+    bool getEstado();
 };
 
 
