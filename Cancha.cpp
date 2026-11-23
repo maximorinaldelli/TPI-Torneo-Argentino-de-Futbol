@@ -2,6 +2,51 @@
 #include <cstring>
 #include <iostream>
 
+using namespace std;
+
+void Cancha::cargar(bool mod)
+{
+
+    if(!mod){
+    cout<< "********************************************"<<endl;
+    cout<< "ID de la Cancha: "<<endl;
+    cin>>_idCancha;
+    cout<<" ID del Club: "<<endl;
+    cin>>_idClub;
+    cout<< "Capacidad: "<<endl;
+    cin>> _capacidad;
+    cout<< "Direccion: " <<endl;
+    _direccion;
+    cout<< "Nombre: "<<endl;
+    _nombre;
+    cout<< "********************************************"<<endl;
+
+    }else{
+    cout<< "********************************************"<<endl;
+    cout<<" ID del Club: "<<endl;
+    cin>>_idClub;
+    cout<< "Capacidad: "<<endl;
+    cin>> _capacidad;
+    cout<< "Direccion: " <<endl;
+    _direccion;
+    cout<< "Nombre: "<<endl;
+    _nombre;
+    cout<< "********************************************"<<endl;
+    }
+
+}
+void Cancha::mostrar()
+{
+    cout<< "********************************************"<<endl;
+    cout<< "ID de la Cancha: "<<_idCancha<<endl;
+    cout<<" ID del Club: "<<_idClub<<endl;
+    cout<< "Capacidad: "<<_capacidad<<endl;
+    cout<< "Direccion: " <<_direccion<<endl;
+    cout<< "Nombre: "<<_nombre<<endl;
+    cout<< "********************************************"<<endl;
+
+}
+
 void Cancha::setIdCancha(int id)
 {
     _idCancha = id;
