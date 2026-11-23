@@ -8,12 +8,13 @@
 #include "Cancha.h"
 #include "Gol.h"
 #include "Contrato.h"
+#include "Cancha.h"
 
 #include "ArchivoJugadores.h"
 #include "ArchivoClubes.h"
 #include "ArchivoPartidosh.h"
 #include "ArchivoContratos.h"
-
+#include "ArchivoCancha.h"
 
 using namespace std;
 
@@ -50,7 +51,7 @@ case 3:
     break;
 
 case 4:
-  ///  menuCanchas();
+   menuCanchas();
     break;
 
 case 5:
@@ -521,6 +522,160 @@ cin>>opc;
 }while(opc!=0);
 }
 
+void Menu::menuCanchas()
+{
+    int opc;
+    do{
+    system("cls");
+    cout<<"------------------- MENU CANCHAS -------------------"<<endl;
+cout<<"1.CARGAR CANCHAS"<<endl;
+cout<<"2.MOSTRAR CANCHAS"<<endl;
+cout<<"3.BUSCAR CANCHAS"<<endl;
+cout<<"4.MODIFICAR CANCHAS"<<endl;
+cout<<"5.DAR DE BAJA CANCHAS"<<endl;
+cout<<"0.VOLVER"<<endl;
+cout<<"---------------------------------------------------"<<endl;
+cout<<"INGRESE UNA OPCION:"<<endl;
+cin>>opc;
+
+    switch(opc)
+    {
+        case 1:{
+        system("cls");
+    Cancha reg;
+    ArchivoCancha archireg;
+
+    reg.cargar(0);
+    system("cls");
+    if(archireg.guardarRegistro(reg))
+    {
+        cout<< "CANCHA GUARDADA CORRECTAMENTE."<<endl;
+    }else{
+    cout<< "ERROR AL CARGAR CANCHA."<<endl;
+    }
+    system("pause");
+    break;
+    }
+
+case 2:{
+        system("cls");
+    Cancha reg;
+    ArchivoCancha archireg;
+
+    system("cls");
+
+    int cant = archireg.contarRegistros();
+    if(cant == 0)
+    {
+        cout<<"Archivo de cancha vacio"<<endl;
+        system("pause");
+        break;
+    }
+
+    for(int i=0;i<cant;i++)
+    {
+        reg = archireg.leerRegistro(i);
+        if(reg.getEstado()){
+        reg.mostrar();
+        cout<<endl;
+        }
+    }
+
+    system("pause");
+    break;
+}
+case 3:
+    {
+    ArchivoCancha archireg;
+    Cancha reg;
+    int id;
+
+    cout << "INGRESE EL ID DE LA CANCHA A BUSCAR: "<<endl;
+    cin>>id;
+    int res = archireg.buscarPorId(id);
+    if(res != -1)
+    {
+        cout<< "CANCHA ENCONTRADA: "<<endl;
+        reg = archireg.leerRegistro(res);
+        reg.mostrar();
+        system("pause");
+    }else{
+    cout<< "CANCHA NO ENCONTRADA"<<endl;
+    system("pause");
+    break;
+    }
+
+    break;
+    }
+
+case 4:
+    {
+        ArchivoCancha archireg;
+        Cancha reg;
+        int id;
+
+        cout<< "INGRESE ID DE LA CANCHA A MODIFICAR:"<<endl;
+        cin>>id;
+
+        int pos = archireg.buscarPorId(id);
+        if(pos != -1)
+        {
+            reg = archireg.leerRegistro(pos);
+
+            cout<< "DATOS ACTUALES: "<<endl;
+
+            system("cls");
+            reg.mostrar();
+            system("pause");
+
+            reg.cargar(1);
+            bool res = archireg.modificarRegistro(reg,pos);
+
+            if(res)
+            {
+            system("cls");
+            cout<< "REGISTRO MODIFICADO CORRECTAMENTE"<<endl;
+            system("pause");
+            break;
+            }else{
+            system("cls");
+            cout<< "ERROR AL MODIFICAR EL ARCHIVO"<<endl;
+            system("pause");
+            }
+        }else{
+        system("cls");
+        cout<<"NO SE ENCONTRO REGISTRO CON ESE ID."<<endl;
+        system("pause");
+        }
+        break;
+    }
+    case 5:{
+
+    ArchivoCancha archireg;
+
+    cout<<"INGRESE EL ID A DAR DE BAJA"<<endl;
+    int id;
+    cin>>id;
+   if( archireg.bajaLogica(id))
+   {
+       system("cls");
+       cout<< "DADO DE BAJA CORRECTAMENTE"<<endl;
+        system("pause");
+   }else{
+        system("cls");
+       cout<< "ERROR AL DAR DE BAJA"<<endl;
+        system("pause");
+   }
+
+    }
+    break;
+    case 0:
+        return;
+    }
+
+
+    }while(opc=!0);
+}
 
 void Menu::ejecutar()
 {
