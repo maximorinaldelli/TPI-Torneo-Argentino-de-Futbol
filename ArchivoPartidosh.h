@@ -16,7 +16,7 @@ public:
     Partido leerRegistro(int pos);
     int buscarPorId(int id);
     int contarRegistros();
-
+    bool bajaLogica(int id);
 
 
 
