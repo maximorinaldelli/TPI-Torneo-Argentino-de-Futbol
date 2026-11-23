@@ -9,12 +9,14 @@
 #include "Gol.h"
 #include "Contrato.h"
 #include "Cancha.h"
+#include "Partido.h"
 
 #include "ArchivoJugadores.h"
 #include "ArchivoClubes.h"
 #include "ArchivoPartidosh.h"
 #include "ArchivoContratos.h"
 #include "ArchivoCancha.h"
+#include "ArchivoPartidosh.h"
 
 using namespace std;
 
@@ -55,7 +57,7 @@ case 4:
     break;
 
 case 5:
-   /// menuPartidos();
+   menuPartidos();
     break;
 
 case 6:
@@ -652,6 +654,161 @@ case 4:
     case 5:{
 
     ArchivoCancha archireg;
+
+    cout<<"INGRESE EL ID A DAR DE BAJA"<<endl;
+    int id;
+    cin>>id;
+   if( archireg.bajaLogica(id))
+   {
+       system("cls");
+       cout<< "DADO DE BAJA CORRECTAMENTE"<<endl;
+        system("pause");
+   }else{
+        system("cls");
+       cout<< "ERROR AL DAR DE BAJA"<<endl;
+        system("pause");
+   }
+
+    }
+    break;
+    case 0:
+        return;
+    }
+
+
+    }while(opc=!0);
+}
+
+void Menu::menuPartidos()
+{
+    int opc;
+    do{
+    system("cls");
+    cout<<"------------------- MENU PARTIDOS -------------------"<<endl;
+cout<<"1.CARGAR PARTIDO"<<endl;
+cout<<"2.MOSTRAR PARTIDO"<<endl;
+cout<<"3.BUSCAR PARTIDO"<<endl;
+cout<<"4.MODIFICAR PARTIDO"<<endl;
+cout<<"5.DAR DE BAJA PARTIDO"<<endl;
+cout<<"0.VOLVER"<<endl;
+cout<<"---------------------------------------------------"<<endl;
+cout<<"INGRESE UNA OPCION:"<<endl;
+cin>>opc;
+
+    switch(opc)
+    {
+        case 1:{
+        system("cls");
+    Partido reg;
+    ArchivoPartidos archireg;
+
+    reg.cargar(0);
+    system("cls");
+    if(archireg.guardarRegistro(reg))
+    {
+        cout<< "PARTIDO GUARDADO CORRECTAMENTE."<<endl;
+    }else{
+    cout<< "ERROR AL CARGAR PARTIDO."<<endl;
+    }
+    system("pause");
+    break;
+    }
+
+case 2:{
+        system("cls");
+    Partido reg;
+    ArchivoPartidos archireg;
+
+    system("cls");
+
+    int cant = archireg.contarRegistros();
+    if(cant == 0)
+    {
+        cout<<"Archivo de partido vacio"<<endl;
+        system("pause");
+        break;
+    }
+
+    for(int i=0;i<cant;i++)
+    {
+        reg = archireg.leerRegistro(i);
+        if(reg.getEstado()){
+        reg.mostrar();
+        cout<<endl;
+        }
+    }
+
+    system("pause");
+    break;
+}
+case 3:
+    {
+    ArchivoPartidos archireg;
+    Partido reg;
+    int id;
+
+    cout << "INGRESE EL ID DEL PARTIDO A BUSCAR: "<<endl;
+    cin>>id;
+    int res = archireg.buscarPorId(id);
+    if(res != -1)
+    {
+        cout<< "PARTIDO ENCONTRADO: "<<endl;
+        reg = archireg.leerRegistro(res);
+        reg.mostrar();
+        system("pause");
+    }else{
+    cout<< "PARTIDO NO ENCONTRADO"<<endl;
+    system("pause");
+    break;
+    }
+
+    break;
+    }
+
+case 4:
+    {
+        ArchivoPartidos archireg;
+        Partido reg;
+        int id;
+
+        cout<< "INGRESE ID DEL PARTIDO A MODIFICAR:"<<endl;
+        cin>>id;
+
+        int pos = archireg.buscarPorId(id);
+        if(pos != -1)
+        {
+            reg = archireg.leerRegistro(pos);
+
+            cout<< "DATOS ACTUALES: "<<endl;
+
+            system("cls");
+            reg.mostrar();
+            system("pause");
+
+            reg.cargar(1);
+            bool res = archireg.modificarRegistro(reg,pos);
+
+            if(res)
+            {
+            system("cls");
+            cout<< "REGISTRO MODIFICADO CORRECTAMENTE"<<endl;
+            system("pause");
+            break;
+            }else{
+            system("cls");
+            cout<< "ERROR AL MODIFICAR EL ARCHIVO"<<endl;
+            system("pause");
+            }
+        }else{
+        system("cls");
+        cout<<"NO SE ENCONTRO REGISTRO CON ESE ID."<<endl;
+        system("pause");
+        }
+        break;
+    }
+    case 5:{
+
+    ArchivoPartidos archireg;
 
     cout<<"INGRESE EL ID A DAR DE BAJA"<<endl;
     int id;
