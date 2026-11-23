@@ -2,6 +2,12 @@
 #include <iostream>
 #include "ArchivoPartidosh.h"
 
+
+ArchivoPartidos::ArchivoPartidos(const char *nom)
+{
+    strcpy(_nombreArchivo,nom);
+}
+
 bool ArchivoPartidos::guardarRegistro(Partido reg)
 {
     FILE *pFile = fopen(_nombreArchivo,"ab");
@@ -80,6 +86,21 @@ int ArchivoPartidos::contarRegistros()
     fclose(pFile);
     return cant;
 
+}
+
+bool ArchivoPartidos::bajaLogica(int id)
+{
+    int pos = buscarPorId(id);
+
+    if(pos==-1)
+    {
+        return false;
+    }
+
+    Partido reg;
+    reg = leerRegistro(pos);
+    reg.setEstado(false);
+    return modificarRegistro(reg,pos);
 }
 
 
