@@ -92,7 +92,10 @@ const char* Cancha::getDireccion()
 {
     return _direccion;
 }
-
+bool Cancha::getEstado()
+{
+    return _estado;
+}
 
 
 

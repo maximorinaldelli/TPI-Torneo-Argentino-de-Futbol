@@ -14,6 +14,7 @@ private:
     void menuCanchas();
     void menuGoles();
     void menuPartidos();
+    void menuReportes();
 };
 
 

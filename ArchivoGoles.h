@@ -19,7 +19,7 @@ public:
     bool guardarRegistro(Gol reg);
     bool modificarRegistro(Gol reg,int pos);
     Gol leerRegistro(int id);
-    int buscarPorId(int id);
+    int buscarPorId(int idpartido,int idjug, int minu );
     int contarRegistros();
 
 };

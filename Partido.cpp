@@ -23,6 +23,10 @@ void Partido::cargar(bool mod)
 
     }else{
     cout<< "********************************************"<<endl;
+    cout<<" ID del Equipo Local: "<<endl;
+    cin>>_idLocal;
+    cout<< " ID del Equipo Visitante"<<endl;
+    cin>> _idVisitante;
     cout<< "Cantidad de Goles del Equipo Local: " <<endl;
     cin>>_cantGolesLocal;
     cout<< "Cantidad de Goles del Equipo Visitante: " <<endl;

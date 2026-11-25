@@ -33,29 +33,29 @@
 1795208384 c:\dev\proyecto final\proyectofinal\contrato.h
 	"Fecha.h"
 
-1795046212 source:c:\dev\proyecto final\proyectofinal\gol.cpp
+1795560763 source:c:\dev\proyecto final\proyectofinal\gol.cpp
 	<iostream>
 	<cstring>
 	"Gol.h"
+	"Partido.h"
 
-1795210705 c:\dev\proyecto final\proyectofinal\gol.h
+1795560714 c:\dev\proyecto final\proyectofinal\gol.h
 	<iostream>
 
-1794483629 source:c:\dev\proyecto final\proyectofinal\partido.cpp
+1795560702 source:c:\dev\proyecto final\proyectofinal\partido.cpp
 	"Partido.h"
 	"Gol.h"
 	<iostream>
 
-1794483512 c:\dev\proyecto final\proyectofinal\partido.h
+1795457248 c:\dev\proyecto final\proyectofinal\partido.h
 	<iostream>
-	"Gol.h"
 
-1794574644 source:c:\dev\proyecto final\proyectofinal\cancha.cpp
+1795457491 source:c:\dev\proyecto final\proyectofinal\cancha.cpp
 	"Cancha.h"
 	<cstring>
 	<iostream>
 
-1794574644 c:\dev\proyecto final\proyectofinal\cancha.h
+1795457248 c:\dev\proyecto final\proyectofinal\cancha.h
 
 1795044360 source:c:\dev\proyecto final\proyectofinal\archivojugadores.cpp
 	<cstring>
@@ -68,12 +68,12 @@
 	<iostream>
 	"Jugador.h"
 
-1794971389 source:c:\dev\proyecto final\proyectofinal\archivopartidos.cpp
+1795457248 source:c:\dev\proyecto final\proyectofinal\archivopartidos.cpp
 	<cstring>
 	<iostream>
 	"ArchivoPartidosh.h"
 
-1794957718 c:\dev\proyecto final\proyectofinal\archivopartidosh.h
+1795457248 c:\dev\proyecto final\proyectofinal\archivopartidosh.h
 	<cstring>
 	<iostream>
 	"Partido.h"
@@ -89,7 +89,7 @@
 	<cstring>
 	"Club.h"
 
-1795210328 source:c:\dev\proyecto final\proyectofinal\menu.cpp
+1795627029 source:c:\dev\proyecto final\proyectofinal\menu.cpp
 	<iostream>
 	<cstring>
 	"Menu.h"
@@ -99,19 +99,24 @@
 	"Cancha.h"
 	"Gol.h"
 	"Contrato.h"
+	"Cancha.h"
+	"Partido.h"
 	"ArchivoJugadores.h"
 	"ArchivoClubes.h"
 	"ArchivoPartidosh.h"
 	"ArchivoContratos.h"
+	"ArchivoCancha.h"
+	"ArchivoPartidosh.h"
+	"ArchivoGoles.h"
 
-1795041459 c:\dev\proyecto final\proyectofinal\menu.h
+1795627009 c:\dev\proyecto final\proyectofinal\menu.h
 
-1795046212 source:c:\dev\proyecto final\proyectofinal\archivocancha.cpp
+1795457248 source:c:\dev\proyecto final\proyectofinal\archivocancha.cpp
 	<cstring>
 	<iostream>
 	"ArchivoCancha.h"
 
-1795046212 c:\dev\proyecto final\proyectofinal\archivocancha.h
+1795457248 c:\dev\proyecto final\proyectofinal\archivocancha.h
 	<cstring>
 	<iostream>
 	"Cancha.h"
@@ -126,12 +131,12 @@
 	<iostream>
 	"Contrato.h"
 
-1795053764 source:c:\dev\proyecto final\proyectofinal\archivogoles.cpp
+1795614141 source:c:\dev\proyecto final\proyectofinal\archivogoles.cpp
 	<cstring>
 	<iostream>
 	"ArchivoGoles.h"
 
-1795210705 c:\dev\proyecto final\proyectofinal\archivogoles.h
+1795613874 c:\dev\proyecto final\proyectofinal\archivogoles.h
 	<cstring>
 	<iostream>
 	"Gol.h"

@@ -2,6 +2,10 @@
 #include <iostream>
 #include "ArchivoGoles.h"
 
+ArchivoGoles::ArchivoGoles(const char* nom)
+{
+    strcpy(_nombreArchivo,nom);
+}
 bool ArchivoGoles::guardarRegistro(Gol reg)
 {
     FILE *pFile = fopen(_nombreArchivo,"ab");
@@ -46,26 +50,23 @@ Gol ArchivoGoles::leerRegistro(int pos)
 
 
 }
-int ArchivoGoles::buscarPorId(int id)
+int ArchivoGoles::buscarPorId(int idp, int idj, int minu)
 {
-    FILE *pFile = fopen(_nombreArchivo,"rb");
-    if(pFile==nullptr)
-    {
-        return -1;
-    }
     Gol reg;
-    int pos=0;
+    int cant = contarRegistros();
 
-    while(fread(&reg,sizeof(Gol),1,pFile))
-    {
-        if(reg.getIdPartido()==id)
+    for (int i=0;i<cant;i++){
+        reg = leerRegistro(i);
+
+        if(reg.getIdPartido() == idp &&
+           reg.getIdJugador() == idj &&
+           reg.getMinuto() == minu)
         {
-            fclose(pFile);
-            return pos;
+
+            return i;
         }
-        pos++;
-    }
-    fclose(pFile);
+        }
+
     return -1;
 }
 int ArchivoGoles::contarRegistros()
