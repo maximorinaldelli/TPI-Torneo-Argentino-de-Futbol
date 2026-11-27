@@ -112,3 +112,26 @@ bool ArchivoClubes::bajaLogica(int id)
     return modificarRegistro(reg,pos);
 }
 
+int ArchivoClubes::contarActivos()
+{
+    FILE *pfile = fopen(_nombreArchivo, "rb");
+
+    if (pfile == nullptr)
+    {
+        return 0;
+    }
+
+    Club reg;
+    int contador = 0;
+
+    while (fread(&reg, sizeof(Club), 1, pfile) == 1)
+    {
+        if (reg.getEstado())
+        {
+            contador++;
+        }
+    }
+
+    fclose(pfile);
+    return contador;
+}

@@ -2,6 +2,12 @@
 
 #include <iostream>
 
+enum class EstadoPartido
+{
+    JUGADO = 1,
+    PENDIENTE = 2,
+    BAJA = 3
+};
 
 class Partido
 {
@@ -11,7 +17,8 @@ private:
     int _idVisitante;
     int _cantGolesLocal;
     int _cantGolesVisitante;
-    bool _estado;
+    int _fecha;
+    EstadoPartido _estado;
 
 public:
     void cargar(bool mod);
@@ -22,14 +29,16 @@ public:
     void setIdVisitante(int );
     void setCantGolLocal(int cant);
     void setCantGolVisita(int cant);
-    void setEstado(bool est);
+    void setFecha(int fecha);
+    void setEstado(EstadoPartido est);
 
     int getIdPartido();
     int getIdLocal();
     int getIdVisitante();
     int getCantGolesLocal();
     int getCantGolesVisita();
-    bool getEstado();
+    int getFecha();
+    EstadoPartido getEstado();
 };
 
 

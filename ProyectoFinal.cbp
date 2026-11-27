@@ -60,6 +60,10 @@
 		<Unit filename="Menu.h" />
 		<Unit filename="Partido.cpp" />
 		<Unit filename="Partido.h" />
+		<Unit filename="Posicion.cpp" />
+		<Unit filename="Posicion.h" />
+		<Unit filename="TablaPosiciones.cpp" />
+		<Unit filename="TablaPosiciones.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

@@ -94,12 +94,12 @@ bool ArchivoPartidos::bajaLogica(int id)
 
     if(pos==-1)
     {
-        return false;
+        return 3;
     }
 
     Partido reg;
     reg = leerRegistro(pos);
-    reg.setEstado(false);
+    reg.setEstado(EstadoPartido::BAJA);
     return modificarRegistro(reg,pos);
 }
 

@@ -7,31 +7,34 @@ using namespace std;
 void Partido::cargar(bool mod)
 {
 
-    if(!mod){
-    cout<< "********************************************"<<endl;
-    cout<< "ID del Partido: "<<endl;
-    cin>>_idPartido;
-    cout<<" ID del Equipo Local: "<<endl;
-    cin>>_idLocal;
-    cout<< " ID del Equipo Visitante"<<endl;
-    cin>> _idVisitante;
-    cout<< "Cantidad de Goles del Equipo Local: " <<endl;
-    cin>>_cantGolesLocal;
-    cout<< "Cantidad de Goles del Equipo Visitante: " <<endl;
-    cin>>_cantGolesVisitante;
-    cout<< "********************************************"<<endl;
+    if(!mod)
+    {
+        cout<< "********************************************"<<endl;
+        cout<< "ID del Partido: "<<endl;
+        cin>>_idPartido;
+        cout<<" ID del Equipo Local: "<<endl;
+        cin>>_idLocal;
+        cout<< " ID del Equipo Visitante"<<endl;
+        cin>> _idVisitante;
+        cout<< "Cantidad de Goles del Equipo Local: " <<endl;
+        cin>>_cantGolesLocal;
+        cout<< "Cantidad de Goles del Equipo Visitante: " <<endl;
+        cin>>_cantGolesVisitante;
+        cout<< "********************************************"<<endl;
 
-    }else{
-    cout<< "********************************************"<<endl;
-    cout<<" ID del Equipo Local: "<<endl;
-    cin>>_idLocal;
-    cout<< " ID del Equipo Visitante"<<endl;
-    cin>> _idVisitante;
-    cout<< "Cantidad de Goles del Equipo Local: " <<endl;
-    cin>>_cantGolesLocal;
-    cout<< "Cantidad de Goles del Equipo Visitante: " <<endl;
-    cin>>_cantGolesVisitante;
-    cout<< "********************************************"<<endl;
+    }
+    else
+    {
+        cout<< "********************************************"<<endl;
+        cout<<" ID del Equipo Local: "<<endl;
+        cin>>_idLocal;
+        cout<< " ID del Equipo Visitante"<<endl;
+        cin>> _idVisitante;
+        cout<< "Cantidad de Goles del Equipo Local: " <<endl;
+        cin>>_cantGolesLocal;
+        cout<< "Cantidad de Goles del Equipo Visitante: " <<endl;
+        cin>>_cantGolesVisitante;
+        cout<< "********************************************"<<endl;
     }
 
 }
@@ -67,8 +70,11 @@ void Partido::setCantGolVisita(int cant)
 {
     _cantGolesVisitante = cant;
 }
-
-void Partido::setEstado(bool est)
+void Partido::setFecha(int fecha)
+{
+    _fecha = fecha;
+}
+void Partido::setEstado(EstadoPartido est)
 {
     _estado = est;
 }
@@ -86,12 +92,14 @@ int Partido::getIdPartido()
     return _idPartido;
 }
 
-bool Partido::getEstado()
+EstadoPartido Partido::getEstado()
 {
     return _estado;
 }
-
-
+int Partido::getFecha()
+{
+    return _fecha;
+}
 
 
 

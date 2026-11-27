@@ -794,7 +794,7 @@ void Menu::menuPartidos()
             for(int i=0; i<cant; i++)
             {
                 reg = archireg.leerRegistro(i);
-                if(reg.getEstado())
+                if(reg.getEstado()==EstadoPartido::PENDIENTE)
                 {
                     reg.mostrar();
                     cout<<endl;
