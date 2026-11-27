@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <iomanip>
 
 #include "Posicion.h"
 
@@ -15,7 +16,18 @@ Posicion::Posicion(int id)
     _diferenciaGol = 0;
     _puntos = 0;
 }
-
+void Posicion::mostrar()
+{
+    std::cout
+    <<std::right <<std::setw(5)<< _partidosJugados
+    <<std::setw(5)     << _partidosGanados
+    <<std::setw(5)     << _partidosPerdidos
+    <<std::setw(5)     << _partidosEmpatados
+    <<std::setw(5)     << _golesFavor
+    <<std::setw(5)     << _golesContra
+    <<std::setw(5)     << _diferenciaGol
+    <<std::setw(5)     << _puntos;
+}
 int Posicion::getIdClub()
 {
     return _idClub;
@@ -54,7 +66,7 @@ int Posicion::getPuntos()
 }
 void Posicion::sumarPuntos()
 {
-    _puntos += (_partidosGanados * 3) + _partidosEmpatados;
+    _puntos = (_partidosGanados * 3) + _partidosEmpatados;
 }
 void Posicion::actualizarGoles(int gf, int gc)
 {

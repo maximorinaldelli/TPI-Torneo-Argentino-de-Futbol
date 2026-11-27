@@ -10,6 +10,8 @@
 #include "Contrato.h"
 #include "Cancha.h"
 #include "Partido.h"
+#include "TablaPosiciones.h"
+#include "Posicion.h"
 
 #include "ArchivoJugadores.h"
 #include "ArchivoClubes.h"
@@ -28,13 +30,14 @@ void Menu::menuPrincipal()
     {
         system("cls");
         cout<<"------------------- MENU PRINCIPAL -------------------"<<endl;
-        cout<<"1.MENU JUGADORES"<<endl;
-        cout<<"2.MENU CLUBES"<<endl;
-        cout<<"3.MENU CONTRATOS"<<endl;
-        cout<<"4.MENU CANCHAS"<<endl;
-        cout<<"5.MENU PARTIDOS"<<endl;
-        cout<<"6.MENU GOLES"<<endl;
-        cout<<"7.MENU REPORTES"<<endl;
+        cout<<"1. MENU JUGADORES"<<endl;
+        cout<<"2. MENU CLUBES"<<endl;
+        cout<<"3. MENU CONTRATOS"<<endl;
+        cout<<"4. MENU CANCHAS"<<endl;
+        cout<<"5. MENU PARTIDOS"<<endl;
+        cout<<"6. MENU GOLES"<<endl;
+        cout<<"7. MENU REPORTES"<<endl;
+        cout<<"8. TABLA ANUAL"<<endl;
         cout<<"0.SALIR"<<endl;
         cout<<"---------------------------------------------------"<<endl;
         cout<<"INGRESE UNA OPCION: ";
@@ -69,8 +72,23 @@ void Menu::menuPrincipal()
         case 7:
             menuReportes();
             break;
+
+        case 8:
+        {
+            TablaPosiciones reg;
+            system("cls");
+            reg.mostrarTabla();
+            system("pause");
+            break;
+        }
+
         case 0:
             return;
+        default:
+            system("cls");
+            cout<<"Opcion invalida, intente nuevamente"<<endl;
+            system("pause");
+            break;
         }
     }
     while(opc!=0);
@@ -736,6 +754,56 @@ void Menu::menuCanchas()
     while(opc!=0);
 }
 
+bool Menu::esValido(Partido reg)
+{
+    ArchivoClubes archiclu;
+    int posL = archiclu.buscarXId(reg.getIdLocal());
+    int posV = archiclu.buscarXId(reg.getIdVisitante());
+
+    if(reg.getIdLocal()==reg.getIdVisitante())
+    {
+        system("cls");
+        cout<< "ERROR, NO PUEDEN TENER EL MISMO ID EL EQUIPO LOCAL Y EL VISITANTE"<<endl;
+        system("pause");
+        return false;
+    }
+    if(posL == -1)
+    {
+        system("cls");
+        cout<< "ERROR, NO EXISTE CLUB CON EL ID LOCAL INGRESADO"<<endl;
+        system("pause");
+        return false;
+    }
+    if(posV == -1)
+    {
+        system("cls");
+        cout<< "ERROR, NO EXISTE CLUB CON EL ID VISITANTE INGRESADO"<<endl;
+        system("pause");
+        return false;
+    }
+        Club vis, loc;
+
+        loc = archiclu.leerRegistro(posL);
+        vis = archiclu.leerRegistro(posV);
+
+        if(!loc.getEstado())
+        {
+            system("cls");
+            cout<< "EQUIPO LOCAL INACTIVO"<<endl;
+            system("pause");
+            return false;
+        }
+        if(!vis.getEstado())
+        {
+            system("cls");
+            cout<< "EQUIPO VISITANTE INACTIVO"<<endl;
+            system("pause");
+            return false;
+        }
+
+    return true;
+}
+
 void Menu::menuPartidos()
 {
     int opc;
@@ -760,9 +828,19 @@ void Menu::menuPartidos()
             system("cls");
             Partido reg;
             ArchivoPartidos archireg;
+            ArchivoClubes archiclu;
 
             reg.cargar(0);
             system("cls");
+
+            if(archireg.buscarPorId(reg.getIdPartido()) != -1)
+            {
+                cout<< "YA EXISTE PARTIDO CON ESE ID"<<endl;
+                system("pause");
+                break;
+            }
+            if(!esValido(reg)){break;}
+
             if(archireg.guardarRegistro(reg))
             {
                 cout<< "PARTIDO GUARDADO CORRECTAMENTE."<<endl;
@@ -794,7 +872,7 @@ void Menu::menuPartidos()
             for(int i=0; i<cant; i++)
             {
                 reg = archireg.leerRegistro(i);
-                if(reg.getEstado()==EstadoPartido::PENDIENTE)
+                if(reg.getEstado()==EstadoPartido::JUGADO || reg.getEstado()==EstadoPartido::PENDIENTE)
                 {
                     reg.mostrar();
                     cout<<endl;
@@ -842,15 +920,15 @@ void Menu::menuPartidos()
             int pos = archireg.buscarPorId(id);
             if(pos != -1)
             {
+                system("cls");
                 reg = archireg.leerRegistro(pos);
 
                 cout<< "DATOS ACTUALES: "<<endl;
-
-                system("cls");
                 reg.mostrar();
                 system("pause");
 
                 reg.cargar(1);
+                if(!esValido(reg)){break;}
                 bool res = archireg.modificarRegistro(reg,pos);
 
                 if(res)
@@ -900,6 +978,10 @@ void Menu::menuPartidos()
         break;
         case 0:
             return;
+        default:
+            system("cls");
+            cout<<"OPCION INVALIDA, INTENTE NUEVAMENTE. \n";
+            system("pause");
         }
 
 
@@ -1101,7 +1183,8 @@ void Menu::menuGoles()
             }
             break;
         }
-        case 0: return;
+        case 0:
+            return;
 
         }
 
@@ -1116,7 +1199,8 @@ void Menu::menuGoles()
 void Menu::menuReportes()
 {
     int opc;
-    do{
+    do
+    {
         system("cls");
         cout<<"------------------- MENU REPORTES -------------------"<<endl;
         cout<<"1."<<endl;
@@ -1136,7 +1220,8 @@ void Menu::menuReportes()
 
 
 
-    }while(opc!=0);
+    }
+    while(opc!=0);
 }
 
 void Menu::ejecutar()

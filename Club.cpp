@@ -49,7 +49,6 @@ void Club::cargar(bool mod)
     cin.ignore();
     cout<<"Nombre del Club: "<<endl;
     cin.getline(_nombre,50);
-    cin.ignore();
 
     cout<<"Presidente: "<<endl;
     cin.getline(_presidente,40);

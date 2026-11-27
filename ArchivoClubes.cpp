@@ -111,7 +111,20 @@ bool ArchivoClubes::bajaLogica(int id)
     reg.setEstado(false);
     return modificarRegistro(reg,pos);
 }
-
+bool ArchivoClubes::estaActivo(int id)
+{
+    Club reg;
+    int pos = buscarXId(id);
+    if( pos != -1)
+    {
+        reg = leerRegistro(pos);
+        if(reg.getEstado())
+        {
+            return true;
+        }else{return false;}
+    }
+    return false;
+}
 int ArchivoClubes::contarActivos()
 {
     FILE *pfile = fopen(_nombreArchivo, "rb");

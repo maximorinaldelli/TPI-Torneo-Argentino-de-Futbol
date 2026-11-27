@@ -21,6 +21,7 @@ private:
     EstadoPartido _estado;
 
 public:
+    void cargarEstado();
     void cargar(bool mod);
     void mostrar();
 

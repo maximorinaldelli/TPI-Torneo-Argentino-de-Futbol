@@ -26,6 +26,7 @@ private:
 
 public:
     Posicion(int id=-1);
+    void mostrar();
 
     int getIdClub() ;
     int getPartidosJugados() ;

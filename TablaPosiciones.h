@@ -19,6 +19,8 @@ public:
     TablaPosiciones();
     ~TablaPosiciones();
 
+    int buscarPos(int id);
+    bool vaAntes(Posicion a, Posicion b);
     void calcularTabla();
     void ordenarTabla();
     void mostrarTabla();

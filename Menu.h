@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Partido.h"
 
 class Menu
 {
@@ -15,6 +15,8 @@ private:
     void menuGoles();
     void menuPartidos();
     void menuReportes();
+
+    bool esValido(Partido reg);
 };
 
 

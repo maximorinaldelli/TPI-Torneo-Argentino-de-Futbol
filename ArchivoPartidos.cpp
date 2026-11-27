@@ -94,7 +94,7 @@ bool ArchivoPartidos::bajaLogica(int id)
 
     if(pos==-1)
     {
-        return 3;
+        return false;
     }
 
     Partido reg;
